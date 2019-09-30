@@ -84,9 +84,9 @@ dans le tableau `names`.
 
 Rappelez-vous que vous pouvez utiliser le JavaScript standard dans JSX en utilisant `{ }` pour le protéger.
 
-Méthodes utiles: `Array.prototype.map`
+Méthodes utiles : `Array.prototype.map`
 
-Liens utiles: [les listes et les clés en React](https://reactjs.org/docs/lists-and-keys.html)
+Liens utiles : [les listes et les clés en React](https://reactjs.org/docs/lists-and-keys.html)
 
 
 ## Têches 3 : Composants à état : Timer
@@ -143,9 +143,9 @@ Aussi - assurez-vous que le champ de saisie a le focus après l'affichage du com
 
 #### Astuces
 
-Helpful methods: `String.prototype.match, Array.prototype.filter`
+Méthodes utiles : `String.prototype.match, Array.prototype.filter`
 
-Useful attributes in JSX: `onChange`, `refs`, `className` (because `class` is a reserved keyword in JavaScript)
+Attributs utiles en JSX : `onChange`, `refs`, `className` (parce `class` est un mot-clé réservé en JavaScript)
 
 --
 
