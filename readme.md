@@ -1,115 +1,116 @@
 # React workshop
 
-Slides from the presentation are available [here](https://github.com/ewendel/slidesets/raw/master/react-workshop-forwardjs.pdf)
+Les diapositives de la présentation sont disponibles [ici](https://github.com/ewendel/slidesets/raw/master/react-workshop-forwardjs.pdf)
 
 ## Instructions
 
-Ensure that you have Node.js installed, otherwise install from https://nodejs.org/.
+Assurez-vous que Node.js est installé, sinon installez-le à partir de https://nodejs.org/.
 
-Clone this repo:
+Clonez ce repo :
 
 ```
 git clone https://github.com/ewendel/react-workshop.git
 cd react-workshop
 ```
 
-Install the project's dependencies:
+Installer les dépendances du projet :
 
 ```
 npm install
 ```
 
-Start the webserver:
+Démarrer le serveur web :
 
 ```
 node app.js
 ```
 
-## Tasks
+## Les tâches
 
-Below you'll find all the tasks we will be working with in this workshop. For
-the first part of this workshop we have already created all the files you'll
-need to solve these tasks, so you don't have to create any new files yourself.
-You can find all the files needed in the the `tasks` folder, where you should
-also solve the tasks.
+Ci-dessous, vous trouverez toutes les tâches que nous réaliserons dans le cadre de cet atelier.
+Pour la première partie de cet atelier, nous avons déjà créé tous les fichiers dont vous aurez
+besoin pour résoudre ces tâches, vous n'aurez donc pas à créer de nouveaux fichiers vous-même.
+Vous pouvez trouver tous les fichiers nécessaires dans le dossier des tâches,
+où vous devez également résoudre les tâches.
 
-In these files, the source code for React.js and a JSX-transpiler are already
-included so that we do not need to continously build our frontend code while
-developing. Some of the exercises include pre-written CSS, so you shouldn't
-have to write any CSS (unless you want to spice things up, of course)
+Dans ces fichiers, le code source de React.js et un JSX-transpiler sont déjà inclus afin que
+vous n'ayez pas besoin de refaire à chaque fois le code front-end pendant le développement.
+Certains des exercices incluent des CSS pré-écrits, donc vous n'aurez pas besoin d'écrire de CSS
+(à moins que vous ne vouliez pimenter les choses, bien sûr).
 
-To get started, go to: [`http://localhost:3000`](http://localhost:3000)
 
-**Remember to peek at
+Pour commencer, allez à : [`http://localhost:3000`](http://localhost:3000)
+
+**N'oubliez pas de jeter un coup d'œil à la documentation de React 
 [React's documentation](http://facebook.github.io/react/docs/)
-while working on the tasks.**
+pendant que vous travaillez sur les tâches.**
 
-# Part I: Becoming aquainted with React
+# Partie I : Se familiariser avec React
 
-## Task 1: Creating your first component
+## Task 1 : Creating your first component
 
-(For this task, edit the files in directory `/tasks/1/`.
-The changes should be visible in  [http://localhost:3000/1](http://localhost:3000/1)) 
+(Pour cette tâche, éditez les fichiers dans le répertoire `/tasks/1/`.
+Les changements doivent être visibles dans  [http://localhost:3000/1](http://localhost:3000/1)) 
 
-Create a simple React component that prints "Hello World".
+Créez un composant React simple qui affiche "Hello World".
 
-To solve this task we need to create a React component, implement a render
-method in the component, and then render the React component into the DOM.
+Pour résoudre cette tâche, nous devons créer un composant React, implémenter un render
+dans le composant, puis rendre le composant React dans le DOM.
 
-#### Tips
+#### Astuces
 
-Helpful links:
+Liens utiles:
 
 - [`Getting started`](https://reactjs.org/docs/hello-world.html)
 - [`Components`](https://reactjs.org/docs/components-and-props.html)
 - [`ReactDOM.render`](https://reactjs.org/docs/react-dom.html#render)
 
-## Task 2: Passing data & using JSX
+## Tâches 2 : Transmission des données et utilisation de JSX
 
-Expand the component from ex. 1 to take in a property called `name` from its
-parent and write out "Hello, {name}".<br> If the component is not passed a prop
-it should use "World" as a default value.
+Réutiliser le composent de la tâche 1 auquel on ajoute une propriété appelée `name`
+à partir de son parent et écrivez "Hello, {name}".<br> Si le composant n'est pas passé
+en argument, il affichera par défaut la valeur "World".
 
-Next, create a component called `Helloes`that accept a property `names` (array)
-and utilizes the previous component to write out "Hello, {name}" for each of
-the names in the `names`-array.
+Ensuite, créez un composant appelé `Helloes` qui accepte une propriété `names` (tableau)
+et utilise le composant précédent pour écrire "Hello, {name}" pour chacun des éléments
+dans le tableau `names`.
 
-#### Tips
+#### Astuces
 
-`props` are used to pass data from parent to child components - reached via
-`this.props` and are immutable.
+`props` sont utilisés pour passer les données des composants parents aux composants enfants - accessibles via
+`this.props` et ils sont immuables.
 
-`render()` should only return a single node
+`render()` doit retourner qu'un seul noeud
 
-Remember that you can use ordinary JavaScript in JSX by using `{ }` to escape.
+Rappelez-vous que vous pouvez utiliser le JavaScript standard dans JSX en utilisant `{ }` pour le protéger.
 
-Helpful methods: `Array.prototype.map`
+Méthodes utiles: `Array.prototype.map`
 
-Helpful reading: [Lists and keys in React](https://reactjs.org/docs/lists-and-keys.html)
+Liens utiles: [les listes et les clés en React](https://reactjs.org/docs/lists-and-keys.html)
 
-## Task 3: Stateful components: Timer
 
-Create a component called `Timer` that prints out the time passed
-since the component was initially rendered. Example:
+## Têches 3 : Composants à état : Timer
+
+Créer un composent qui se nomme `Timer` qui affiche le temps passé
+depuis que le composant a été initialisé. Exemple :
 
 `I was started 7.8 seconds ago`
 
-The component should update itself 10 times per second, and the component
-should perform any necessary cleanup when unmounted, e.g timer methods.
+Le composant doit se mettre à jour 10 fois par seconde, et le composant
+devrait mettre à jour les secondes sans réécrire le timer en dessous.
 
-#### Tips
+#### Astuces
 
-We use `state` to store our data that changes during the lifetime of a
-component. It can be accessed through `this.state`
+Nous utilisons `state` pour stocker nos données qui changent pendant la durée de vie d'un composant.
+Il est accessible via `this.state`.
 
-Helpful methods: `setInterval, clearInterval`
+Méthodes utiles : `setInterval, clearInterval`.
+Méthodes du cycle de vie : `componentDidMount, componentWillUnmount`
+[Pour en savoir plus sur l'état et les méthodes du cycle de vie, consultez la documentation](https://reactjs.org/docs/state-and-lifecycle.html)
 
-Lifecycle hooks: `componentDidMount, componentWillUnmount`
-[Read about state and lifecycle hooks in the docs](https://reactjs.org/docs/state-and-lifecycle.html)
-
-To unmount the component, use the
+Pour démonter le composant, utilisez l'option
 [`ReactDOM.unmountComponentAtNode`](https://reactjs.org/docs/react-dom.html#unmountcomponentatnode)
-helper, e.g.
+aide, par exemple
 
 ```js
 setTimeout(function() {
@@ -117,15 +118,15 @@ setTimeout(function() {
 }, 3000);
 ```
 
-## Task 4: More state: Real-time search
+## Têche 4: Plus d'état : Recherche en temps réel
 
-Create a component `Search` that is passed an array called `items` (a prop). The
-elements contained in the array will have the following format: `{ name: 'Some
+Créez un composant `Search` qui prend un tableau appelé `items` (a prop).
+Le contenus dans le tableau auront le format suivant : `{ name: 'Some
 string', url: 'www.somesite.com' }`
 
-The component should include a text field, and the elements in the array should
-be filtered by which ones contain the current string in the input field. The
-HTML-structure should look like this:
+Le composant doit inclure un champ texte, et les éléments du tableau doivent être
+filtrées en fonction de la valeur rentrée par l'utilisateur dans ce champ texte.
+La structure HTML devrait ressembler à ceci :
 
 ```html
 <div>
@@ -138,9 +139,9 @@ HTML-structure should look like this:
 </div>
 ```
 
-Also - ensure the input field has focus after the component has been rendered.
+Aussi - assurez-vous que le champ de saisie a le focus après l'affichage du composant.
 
-#### Tips
+#### Astuces
 
 Helpful methods: `String.prototype.match, Array.prototype.filter`
 
